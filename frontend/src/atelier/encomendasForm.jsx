@@ -1,8 +1,7 @@
 import React from 'react'
-import EncomendasList from './encomendasList'
 
 export default props => (
     <div>
-        <EncomendasList />
+        <h1>Form</h1>
     </div>
 )
