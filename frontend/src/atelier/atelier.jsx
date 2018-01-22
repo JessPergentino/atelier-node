@@ -4,7 +4,7 @@ export default class Atelier extends Component {
     render() {
         return(
             <div>
-                <h1>Atelier</h1>
+                <h1>Cadastro Encomendas</h1>
             </div>
         )
     }
