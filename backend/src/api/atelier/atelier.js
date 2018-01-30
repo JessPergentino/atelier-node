@@ -23,7 +23,6 @@ const clienteSchema = new mongoose.Schema({
 })
 
 const encomendaSchema = new mongoose.Schema({
-    ordemServico: {type: String, required: true},
     cliente: clienteSchema,
     santa: [santaSchema],
     pagamento: pagamentoSchema,
