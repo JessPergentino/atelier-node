@@ -28,7 +28,8 @@ const encomendaSchema = new mongoose.Schema({
     santa: [santaSchema],
     pagamento: pagamentoSchema,
     envio: envioSchema,
-    createdAt: {type: Date, default: Date.now}
+    createdAt: {type: Date, default: Date.now},
+    valueTotal: {type: Number, min: 0, required: true}
 })
 
 module.exports = restful.model('atelier', encomendaSchema)
