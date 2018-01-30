@@ -12,6 +12,7 @@
   "devDependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "express-query-int": "^1.0.1",
     "mongoose": "^4.7.0",
     "node-restful": "^0.2.5",
     "nodemon": "^1.11.0",
