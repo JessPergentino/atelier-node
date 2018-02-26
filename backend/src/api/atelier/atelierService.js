@@ -14,4 +14,18 @@ Atelier.route('count', (req,res,next) => {
         }
     })
 })
+
+Atelier.route('sub-total', (req,res,next) => {
+    Atelier.aggregate({
+        $project: {subT: {$sum: "santa.value"}, subQtd: {$sum: "santa.qtd"}}
+    }, {
+        $project: {id: 0, subT:1, subQtd:1}
+    }, (error, result) => {
+        if(error) {
+            res.status(500).json({errors: [error]})
+        } else {
+            res.json(result[0] || {subT:0, subQtd:0})
+        }
+    })
+})
 module.exports = Atelier
