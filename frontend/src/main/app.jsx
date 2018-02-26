@@ -1,13 +1,18 @@
-import 'modules/bootstrap/dist/css/bootstrap.min.css'
-import 'modules/font-awesome/css/font-awesome.min.css'
-
+import '../common/template/dependencies'
 import React from 'react'
-import Menu from '../template/menu'
+
+import Header from '../common/template/header'
+import SideBar from '../common/template/sidebar'
+import Footer from '../common/template/footer'
 import Routes from './routes'
 
 export default props => (
-    <div className='container'>
-        <Menu />
-        <Routes />
+    <div className='wrapper'>
+        <Header />
+        <SideBar/>
+        <div className='content-wrapper' >
+            <Routes/>
+        </div>
+        <Footer/>
     </div>
 )

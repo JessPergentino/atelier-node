@@ -1,8 +1,8 @@
 import React from 'react'
-import EncomendasList from './encomendasList'
+import Grid from '../layout/grid'
 
 export default props => (
     <div>
-        <EncomendasList />
+        Lista de encomendas
     </div>
 )

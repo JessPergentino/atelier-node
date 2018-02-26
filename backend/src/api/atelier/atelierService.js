@@ -15,7 +15,7 @@ Atelier.route('count', (req,res,next) => {
     })
 })
 
-Atelier.route('sub-total', (req,res,next) => {
+Atelier.route('subTotal', (req,res,next) => {
     Atelier.aggregate({
         $project: {subT: {$sum: "santa.value"}, subQtd: {$sum: "santa.qtd"}}
     }, {
