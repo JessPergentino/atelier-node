@@ -28,6 +28,7 @@ const encomendaSchema = new mongoose.Schema({
     santa: [santaSchema],
     pagamento: pagamentoSchema,
     envio: envioSchema,
+    dataEntrega: {type: Date, required: true},
     createdAt: {type: Date, default: Date.now},
 })
 

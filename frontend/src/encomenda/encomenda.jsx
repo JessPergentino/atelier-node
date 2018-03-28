@@ -1,13 +1,27 @@
 import React, {Component} from 'react'
+import {bindActionCreators} from 'redux'
+import {connect} from 'react-redux'
 
 import ContentHeader from '../common/template/contentHeader'
 import Content from '../common/template/content'
 import Tabs from '../common/tab/tab'
 import TabsHeader from '../common/tab/tabsHeader'
 import TabsContent from '../common/tab/tabsContent'
-import TabHeader from '../common/tab/tabHeader';
+import TabHeader from '../common/tab/tabHeader'
+import TabContent from '../common/tab/tabContent'
+import {selectTab, showTabs} from '../common/tab/tabAction'
+import {create} from './encomendaActions'
+
+import List from './encomendaList'
+import Form from './encomendaForm'
 
 class Encomendas extends Component {
+    
+    componentWillMount() {
+        this.props.selectTab('tabList')
+        this.props.showTabs('tabList', 'tabCreate')
+    }
+    
     render() {
         return (
             <div>
@@ -22,7 +36,18 @@ class Encomendas extends Component {
 
                         </TabsHeader>
                         <TabsContent>
-                            
+                            <TabContent id='tabList'>
+                               <List/>
+                            </TabContent>
+                            <TabContent id='tabCreate'>
+                                <Form onSubmit={this.props.create} />
+                            </TabContent>
+                            <TabContent id='tabUpdate'>
+                                <h1>Alterar</h1>
+                            </TabContent>
+                            <TabContent id='tabDelete'>
+                                <h1>Excluir</h1>
+                            </TabContent>
                         </TabsContent>
                     </Tabs>
                 </Content>
@@ -31,4 +56,5 @@ class Encomendas extends Component {
     }
 }
 
-export default Encomendas
+const mapDispatchToProps = dispatch => bindActionCreators({selectTab, showTabs, create}, dispatch)
+export default connect(null,mapDispatchToProps) (Encomendas)
